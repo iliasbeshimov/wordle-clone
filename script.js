@@ -57,8 +57,10 @@ function provideFeedback(guess) {
 
         if (letter === targetWord[i - lastIndex + 4]) {
             cell.style.backgroundColor = "green";
+            cell.style.color = "white";
         } else if (letterIndex !== -1) {
             cell.style.backgroundColor = "yellow";
+            cell.style.color = "black";
         }
     }
 }
@@ -66,4 +68,6 @@ function provideFeedback(guess) {
 function resetGame() {
     remainingGuesses = 6;
     targetWord = generateRandomWord();
-    updateRemainingGuess
+    updateRemainingGuesses();
+    document.getElementById("gameBoard").innerHTML = "";
+}
